@@ -10,7 +10,7 @@
 
 <p>https://github.com/micromax/sadeem-egypt--web-framework</p>
 
-<h2 id="">An HTML5, lightweight, responsive, retina-ready starter WordPress theme for developers.</h2>
+<h2 id="">An java web framework by sadeem-egypt.com , lightweight, builtin server, from developer to developers.</h2>
 
 <p>While Template <em>is</em> stripped-down, it is meant to have some useful defaults so you can start developing right away. Whatever you don&#8217;t need or want, change it, comment it out or delete it.</p>
 
