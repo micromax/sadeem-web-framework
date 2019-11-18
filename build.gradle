@@ -1,0 +1,160 @@
+plugins {
+    id 'application'
+    id 'java'
+    //  id 'scala' // you could enable scala
+    id('io.ebean') version '11.43.2'
+    id "org.jetbrains.kotlin.jvm" version "1.3.50"
+}
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'maven-publish'
+
+group 'com.sadeem_egypt'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    mavenLocal()
+    mavenCentral()
+    google()
+    jcenter()
+}
+compileJava   {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
+ebean {
+    debugLevel = 1
+}
+
+compileKotlin {
+    kotlinOptions.suppressWarnings = true
+}
+configurations.all {
+    resolutionStrategy.force "org.scala-lang:scala-library:2.11.12"
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: '*.jar')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'io.ebean:ebean:11.43.2'
+    compile 'io.ebean:ebean-querybean:11.43.2'
+    annotationProcessor 'io.ebean:querybean-generator:11.43.2'
+    testCompile 'io.ebean:querybean-generator:11.43.2'
+    testCompile 'io.ebean:ebean-test:11.43.2'
+
+    compile 'com.google.code.findbugs:jsr305:3.0.1'
+    compile 'com.google.guava:guava:19.0'
+    compile 'com.google.code.gson:gson:2.5'
+
+    compile "com.typesafe.akka:akka-actor_2.12:2.5.13"
+    compile "com.typesafe.akka:akka-testkit_2.12:2.5.13"
+    compile "org.apache.commons:commons-io:1.3.2"
+
+    compile "commons-cli:commons-cli:1.4"
+
+    compile 'org.postgresql:postgresql:42.2.6'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.15'
+    compile group: 'com.github.oshi', name: 'oshi-core', version: '4.0.0'
+    compile 'io.netty:netty-transport-native-epoll:4.1.15.Final:linux-x86_64'
+    compile "io.vertx:vertx-core:3.5.1"
+    compile "io.vertx:vertx-jdbc-client:3.5.1"
+    compile "io.vertx:vertx-web-client:3.5.2"
+    compile "io.vertx:vertx-web-templ-freemarker:3.5.1"
+    compile "io.vertx:vertx-web-templ-handlebars:3.5.1"
+    compile "io.vertx:vertx-web:3.5.1"
+    compile "org.hsqldb:hsqldb:2.4.0"
+    compile "org.jclouds.driver:jclouds-bouncycastle:1.6.0"
+    compile "org.jooq:jooq-codegen:3.10.7"
+    compile "org.jooq:jooq-meta:3.10.7"
+    compile "org.jooq:jooq:3.10.7"
+    compile "org.threeten:threetenbp:1.4.0"
+    compile "com.j256.ormlite:ormlite-core:5.1"
+    compile "com.zaxxer:HikariCP:2.2.5"
+
+    compile  "org.apache.commons:commons-math3:3.1.1"
+    compile "org.fluentd:fluent-logger:0.2.10"
+    compile group: 'com.h2database', name: 'h2', version: '1.4.199'
+
+
+
+    compile "org.slf4j:slf4j-log4j12:1.7.25"
+    testCompile 'junit:junit:4.+'
+    testCompile 'com.google.truth:truth:0.28'
+    testCompile "org.mockito:mockito-core:1.9.5"
+
+    compile "org.jetbrains.kotlin:kotlin-script-runtime:1.3.50"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    compile("org.jetbrains.kotlin:kotlin-stdlib:1.3.50")
+    implementation "org.jetbrains.kotlin:kotlin-reflect"
+    testImplementation "org.jetbrains.kotlin:kotlin-test"
+    testImplementation "org.jetbrains.kotlin:kotlin-test-junit"
+
+    compile 'com.soywiz:korte-common:0.14.0'
+
+
+    testCompile 'org.scala-lang:scala-library:2.11.12'
+    testImplementation 'org.scalatest:scalatest_2.11:3.0.0'
+
+
+
+
+
+
+
+}
+
+
+
+test {
+    // show standard out and standard error of the test JVM(s) on the console
+    testLogging.showStandardStreams = true
+
+}
+
+task sourceJar(type: Jar) {
+    classifier "sources"
+    from sourceSets.main.allJava
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier "javadoc"
+    from javadoc.destinationDir
+}
+task uberJar(type: Jar) {
+    archiveClassifier = 'uber'
+
+    from sourceSets.main.output
+
+    dependsOn configurations.runtimeClasspath
+    from {
+        configurations.runtimeClasspath.findAll { it.name.endsWith('jar') }.collect { zipTree(it) }
+    }
+}
+
+artifacts {
+    archives jar
+    archives sourceJar
+    archives uberJar
+
+}
+
+
+jar {
+    baseName = 'Sadeem-egypt-com-CGEN-web-Framework'
+    version =  "1.0"
+    mainClassName = "com.cloudsgen.system.boot"
+    manifest {
+        attributes 'Main-Class': "com.cloudsgen.system.boot"
+
+    }
+    exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+}

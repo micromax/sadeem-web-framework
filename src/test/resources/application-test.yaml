@@ -1,0 +1,10 @@
+platform: mysql # h2, postgres, mysql, mariadb, oracle, sqlserver, hana, clickhouse, sqlite
+ddlMode: migration # none | dropCreate | migration
+dbName: webchatser
+
+ebean:
+  ddl:
+    generate: true
+    run: true
+  migration:
+    run: true
