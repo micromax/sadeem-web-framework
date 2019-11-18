@@ -1,89 +1,52 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8"/>
-</head>
-<body>
-    <h1 id="template">Template</h1>
-
+<p>ORM</p>
+<p>&nbsp;</p>
+<h1 id="template">Sadeem web framework&nbsp;</h1>
+<p>vertx based web&nbsp;framework</p>
 <p>https://github.com/micromax/sadeem-egypt--web-framework</p>
-
-<p>https://github.com/micromax/sadeem-egypt--web-framework</p>
-
+<p>http://sadeem-egypt.com</p>
 <h2 id="">An java web framework by sadeem-egypt.com , lightweight, builtin server, from developer to developers.</h2>
-
-<p>While Template <em>is</em> stripped-down, it is meant to have some useful defaults so you can start developing right away. Whatever you don&#8217;t need or want, change it, comment it out or delete it.</p>
-
-<p>What Template is <em>not</em> is a completely bare-bones theme. If you&#8217;re looking for that, we&#8217;ve got you covered! Check out Plate — our completely stripped-down version of Template. https://studio.bio/themes/plate</p>
-
-<p>Template is based on the amazing Bones starter theme by Eddie Machado: http://themble.com/bones.</p>
-
-<p>If you&#8217;re not familiar with Bones, I highly suggest you check it out before using Template. Bones is exquisitely commented and meant to be a learning tool.</p>
-
-<p>I make no Bones (pun definitely intended) about Template copying a lot of what was included in Bones but wanted to customize it for my studio&#8217;s workflow. This may or may not work for you.</p>
-
-<p>With that in mind, we&#8217;ve removed some things I never used in Bones (like Link Pages, tags on pages and IE8 grids amongst others) and added some things in that we use often: more page templates, updated default font stack, a custom post type plugin template, and some custom functions.</p>
-
-<p>We&#8217;ve also included some extras and goodies that developers may find useful but kept those out of the main files.</p>
-
-<p>Edit this, fork it, change it, delete it - whatever. As Eddie might say: it&#8217;s your world. But I hope you make something cool with it.</p>
-
-<h2 id="alittlehistory">A Little History</h2>
-
-<p>My introduction to Bones came five years ago after trying out just about every starter theme out there. Once I found Bones I was hooked and have used it ever since on hundreds of projects. Bones got me to use Sass/SCSS, taught me a ton about WordPress, how themes <em>really</em> work, and made me a better developer.</p>
-
-<p>Yet, over time I found I was making the same changes to Bones at the start of every project and this was taking up valuable time. Thus, I created the predecessor to this theme called &#8216;Osseous&#8217; which included some of the changes found in Template. Osseous literally means: &#8216;of, relating to, or composed of bone&#8217; and was a good departure point.</p>
-
-<p>Template picks up where Osseous left off and takes things a bit further with &#8216;Template&#8217;. It includes namespaced functions and customized defaults along with a lot of other stuff I like and use for my development. Your mileage may vary.</p>
-
-<p>2017 Update: we&#8217;ve gone through and done a major rewrite, adding and updating the following:
-    - WordPress Customizer support
-    - WooCommerce support
-    - updated body class function
-    - expanded Quicktags
-    - template part library (really cool)
-    - updated comments
-    - cleaned up header.php
-    - admin and login page updates
-    - updated media query .scss stylesheets
-    - removed @2x and ie_grid (who uses those?)
-    - HTML schema support
-    - updated css reset
-    - default .scss classes</p>
-
-<p>&#8230;and much, much more.</p>
-
-<p>This is the beginning for Template so we welcome improvements, comments, criticism and general feedback. I&#8217;ve probably made a ton of mistakes so as with anything open source, it is a work in progress.</p>
-
-<h2 id="recommendedplugins">Recommended Plugins</h2>
-
-<p>Some of the stuff in Template references plugins that I use with just about every site and I recommend:
-    - Advanced Custom Fields (Pro): https://www.advancedcustomfields.com. A must-have.
-    - WP Retina 2x: https://wordpress.org/plugins/wp-retina&#8211;2x/. Works with WP built-in retina support. Just install and forget it.
-    - EWWW Image Optimizer: https://wordpress.org/plugins/ewww-image-optimizer/. Smush all of the images. Automagically.
-    - Plugin Organizer: https://wordpress.org/plugins/plugin-organizer/. Selective plugin loading on a per-page, per-post and per-type basis. Word.
-    - WP Migrate DB Pro: https://deliciousbrains.com/wp-migrate-db-pro/. Indispensable tool if you work on sites locally (and you should).</p>
-
-<h2 id="otherstuffs">Other stuffs</h2>
-
-<p>Designed by Joshua Michaels for studio.bio: http://studio.bio/themes/template</p>
-
-<p>With help from @joniler.</p>
-
-<p>License: WTFPL
-    License URI: http://sam.zoy.org/wtfpl/</p>
-
-<p>Do whatever you want. Freedom, baby.</p>
-
-<h4 id="specialthanksto:">Special Thanks to:</h4>
-
-<p>@eddiemachado — all credit is due to him and the original Bones collaborators: Paul Irish, Yoast, Andrew Rogers, David Dellanave and others.</p>
-
-<h4 id="submitbugsorfixes:">Submit Bugs &amp; or Fixes:</h4>
-
-<p>https://github.com/joshuaiz/template/issues</p>
-
-<p>To view Release &amp; Update Notes, read the CHANGELOG.md file in the main folder.</p>
-
-</body>
-</html>
+<p>gradle project so you will be happy with it</p>
+<p>small footprint support Java&nbsp; Kotlin and scala .</p>
+<p>MVC pattern&nbsp;</p>
+<p>very strong built-in web server i could handle 35k&nbsp;request per second based on&nbsp;vertx.io&nbsp;</p>
+<p>databse driver for MYsql is included</p>
+<p>ORM and database <span style="text-decoration: underline;"><strong>migration</strong></span>&nbsp;included thanks to Ebean ORM , you could also use your own ORM .</p>
+<p>akka java actor famework&nbsp;included</p>
+<p>Non blocking :-)&nbsp;</p>
+<p>&nbsp;</p>
+<p>you find example for Controller and Models and view&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2 id="alittlehistory">Recommended documentation</h2>
+<p>you could start build Web app , realtime app and IoT GetWay's or even blockchan , without reading and doc's for based&nbsp;technologys&nbsp;</p>
+<p>1 -&nbsp;<a href="https://vertx.io/">https://vertx.io/</a>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Eclipse Vert.x is a tool-kit for building reactive applications on the JVM</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>2 -&nbsp;<a href="https://akka.io/">https://akka.io/</a>&nbsp;</p>
+<p>Akka, a set of open-source libraries for designing scalable, resilient systems that span processor cores and networks. Akka allows you to focus on meeting business needs instead of writing low-level code to provide reliable behavior, fault tolerance, and high performance.</p>
+<p>Many common practices and accepted programming models do not address important challenges inherent in designing systems for modern computer architectures. To be successful, distributed systems must cope in an environment where components crash without responding, messages get lost without a trace on the wire, and network latency fluctuates. These problems occur regularly in carefully managed intra-datacenter environments - even more so in virtualized architectures.</p>
+<p>&nbsp;</p>
+<p>3 -&nbsp;<a href="https://ebean.io/">https://ebean.io/</a></p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; ORM&nbsp;</p>
+<p>&nbsp;Ebean provides a simple programming model that developers can understand and master quickly.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>4 -&nbsp;<a href="https://freemarker.apache.org/">https://freemarker.apache.org/</a></p>
+<p>&nbsp;</p>
+<p>Apache FreeMarker&trade; is a&nbsp;<em>template engine</em>: a Java library to generate text output (HTML web pages, e-mails, configuration files, source code, etc.) based on templates and changing data. Templates are written in the FreeMarker Template Language (FTL), which is a simple, specialized language (not a full-blown programming language like PHP). Usually, a general-purpose programming language (like Java) is used to prepare the data (issue database queries, do business calculations). Then, Apache FreeMarker displays that prepared data using templates. In the template you are focusing on how to present the data, and outside the template you are focusing on what data to present.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Get Start&nbsp;</strong></p>
+<p>&nbsp;</p>
+<p><strong>will clone &amp; open Examples&nbsp;</strong></p>
+<p><strong>asap i will upload tutorial&nbsp;</strong></p>
+<p>&nbsp;</p>
+<p><strong>you could ask for help by email me <a href="mailto:info@sadeem-egypt.com">info@sadeem-egypt.com</a></strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>stay tuned&nbsp;</strong></p>
+<p>&nbsp;</p>
