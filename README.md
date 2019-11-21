@@ -277,7 +277,81 @@ also you need to  config same files in project root 'used when i need configurat
 <div>
     
     
+    in models we create 2 dir called 
+    1 - logic // for CRUD helpers 
+    2 - finder // to search and finde 
     
+
+
+<p> in logic create Admin Helper by creating AdminHelper.java  </p>
+
+<code>
+        
+      package app.models.logic;
+      
+      import app.models.Admin;
+      import com.cloudsgen.system.core.DataBase.CGModel;
+      import com.cloudsgen.system.core.DataBase.ICrud;
+      import io.ebean.Ebean;
+      import io.vertx.ext.web.RoutingContext;
+
+
+        
+      public class AdminHelper extends CGModel implements ICrud {
+      
+            //the constractor with RoutingContext
+             public AdminHelper(RoutingContext rx)
+                {
+                    super(rx);
+                }
+                
+      }
+
+
+</code>
+
+<p><strong> than we add CRUD method add , edit and delete</strong></p>
+<code>
+ 
+      @Override
+          public void add(Object tClass) {
+          if(tClass instanceof Admin)
+          {
+              Admin c = (Admin) tClass;
+              c.save();
+  
+  
+          }
+      }
+  
+      @Override
+      public void edit(Object id ) {
+          if(id instanceof Admin) {
+  
+              Admin c = (Admin) id;
+  
+  
+              c.update();
+  
+          }
+      }
+  
+      @Override
+      public void delete(Object id) {
+  
+  
+              Admin c = Ebean.getDefaultServer().find(Admin.class).where().eq("user_id" , id).findOne();
+             if(c != null) {
+  
+  
+                 Ebean.getDefaultServer().delete(c);
+             }
+  
+      }
+
+
+</code>
+
 
 </div>
 
