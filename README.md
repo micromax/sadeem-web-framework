@@ -111,6 +111,7 @@ also you need to  config same files in project root 'used when i need configurat
 <li>database.properties</li>
 
 
+<p>First if you know OOP and MVC concepts you are good to go else {read about them first }</p>
 
 
 <p> <strong>Code First </strong> </p>
@@ -245,11 +246,41 @@ also you need to  config same files in project root 'used when i need configurat
 <div><p>  your find this file and it's related files in repo code  </p>
 </div>
 
+<p> <strong> database migration  </strong> </p>
+<p> if you did't use Mysql go to DBmarge file and change database config to what you are using</p>
+
+<p> than run DBmarge it will create migration file than restart your server you will see the table admin :-) </p>
+
+<code style="background:#ccc">
 
 
 
-<p>First if you know OOP and MVC concepts you are good to go else {read about them first }</p>
-<code>  Hello world ! example  &nbsp;</code>
+        public class DBmarge {
+           public static void main(String arg[]){
+                try {
+                    DbMigration dbMigration = DbMigration.create();
+                    dbMigration.setPlatform(Platform.MYSQL); // change to your database type
+                    dbMigration.generateMigration();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+
+
+</code>
+
+
+<p> Models Helper and finder </p>
+<div>
+    
+    
+    
+
+</div>
+
 <p><strong> email me <a href="mailto:info@sadeem-egypt.com">info@sadeem-egypt.com</a></strong></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
