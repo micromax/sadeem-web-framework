@@ -490,6 +490,145 @@ create your controller in language you know Kotlin , java , Scala
 </p>
  
 
+<p>
+
+in app.controller.HelloJava you will find how to Render View and pass data to it
+
+how to USE GET , POST  , REQUEST and Signal Methods  to get users input :
+
+
+ 
+
+
+
+
+
+
+</p>
+
+<p><strong> this.input.POST("var_name"); </strong> its take String Parameter with name in query   </p>
+<p><strong> this.input.GET("var_name"); </strong> its take String Parameter with name in query   </p>
+<p><strong> this.input.REQUEST("var_name"); </strong> its take String Parameter with name in query  work with GET and POST requites   </p>
+<p><strong> this.input.Signal(1); </strong> its take Integer Parameter with offset for requites  path like /controller/metho/data1/data2   </p>
+
+<p><strong>this.input.setCookie("Cookie_name", "Cookie_val"); </strong>set Cookie 2 Parameter , Key_name and Value </p>
+<p><strong>this.input.GetCookie("Cookie_name"); </strong> Get Cookie 1 Parameter , Key_name return Value   </p>
+
+
+<p>Redirect("path/to/redirect"); this method will Redirect user to a path of your chaise  </p>
+
+
+
+<p> <strong>annotation for Auth and Preloading </strong> </p>
+
+<p> we have built-in annotation parser for authenticate some action like user requites and  ... etc    </p>
+
+
+you will find example called AdminAuth in models/logic
+
+<code>
+    
+    
+    
+    package app.models.logic;
+    
+    import app.models.Admin;
+    import app.models.finder.AuthModel;
+    import com.cloudsgen.system.core.DataBase.CGModel;
+    import io.vertx.ext.web.RoutingContext;
+    
+    public class AdminAuth  extends CGModel {
+    
+    
+    
+    
+    
+    
+        public AdminAuth(RoutingContext rx) {
+            super(rx);
+            String Tokin =  this.input.GetCookie("_cgmain");
+            String UUID =  this.input.GetCookie("_cgalphas");
+    
+            String UserIp = this.input.getAgentIp();
+            AuthModel authModel  = new AuthModel();
+    
+            Admin admin = null;
+            if(Tokin == null || UUID == null)
+            {
+                this.setLook(true);
+                Redirect("login");
+            }else {
+    
+    
+                long lid = 0;
+    
+                try {
+                    lid = Long.parseLong(UUID);
+                }catch (NumberFormatException ex)
+                {
+    
+                   lid = 0 ;
+                }
+    
+                try {
+                    admin = authModel.byIdAndTookenAndIp(lid , Tokin , UserIp);
+                    if(admin == null)
+                    {
+    
+    
+                        Redirect("login");
+                    }else
+                    {
+                        this.setLook(false);
+    
+                    }
+                }catch ( ExceptionInInitializerError e)
+                {
+                    Redirect("syserrors/misconf");
+                }
+    
+    
+            }
+    
+    
+        }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
+
+
+
+</code>
+
+
+
+Ok how to use to Auth any controller Simply like that "before controller class deceleration " or before method 
+
+<code>
+
+    @Iauthentication(AuthModel = AdminAuth.class )
+    public class Administration  extends CG_Controller {
+
+
+
+        public Administration(RoutingContext rxtx) {
+            super(rxtx);
+        }
+
+
+
+        @Override
+        public void index() throws IOException {
+        }
+    }
+</code>
 
 
 
@@ -528,10 +667,19 @@ go to view and discover it and read Freemarker documentation for Var , Lists , A
 it's literally will take no time to master it    
 
 
+I hope this Help some one need fast and high performance APP 
+the powerful point of this Work "The Built in Web server "
 
+<code>
+TODO : add dashboard to control from it
+add more tutorial and library 
 
+</code>
 
-<p><strong> email me <a href="mailto:info@sadeem-egypt.com">info@sadeem-egypt.com</a></strong></p>
+finally feel free to contact me 
+<p><strong>  <a href="mailto:m.elqrwash@sadeem-egypt.com">m.elqrwash@sadeem-egypt.com</a></strong></p>
+<p><strong>  <a href="mailto:m.elqrwash@gmail.com">m.elqrwash@gmail.com</a></strong></p>
+<p><strong>  <a href="mailto:info@sadeem-egypt.com">info@sadeem-egypt.com</a></strong></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
