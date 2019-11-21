@@ -1,5 +1,3 @@
-<p>ORM</p>
-<p>&nbsp;</p>
 <h1 id="template">Sadeem web framework&nbsp;</h1>
 <p>vertx based web&nbsp;framework</p>
 <p>https://github.com/micromax/sadeem-egypt--web-framework</p>
@@ -42,9 +40,217 @@
 <p><strong>Get Start&nbsp;</strong></p>
 <p>&nbsp;</p>
 <p><strong>will clone &amp; open Examples&nbsp;</strong></p>
-<p><strong>asap i will upload tutorial&nbsp;</strong></p>
-<p>&nbsp;</p>
-<p><strong>you could ask for help by email me <a href="mailto:info@sadeem-egypt.com">info@sadeem-egypt.com</a></strong></p>
+
+
+
+
+<p> 1 - import  Gradle Project to your IDE </p>
+
+PS it may take time and if you need Scala you have to install it to your machine and 
+enable it as plugin in Gradle file by uncomment it 
+
+<p><strong> Config Files   </strong></p>
+
+<p>
+    <strong> <li> application.properties </li> </strong>
+    <strong> <li> database.properties </li> </strong>
+    <strong> <li> route.properties </li> </strong>
+        
+    
+    
+</p>
+<p>application.properties</p>
+<p>
+    this file hold main config for Host and Port
+    Ebean(ORM) conf ... etc 
+    change port for what you want 9999 for example 
+    
+    run Gradle task Build from IDEA or command Line
+    thank hit run task 
+    or Run boot.java (this main class )
+    
+    
+</p>
+
+
+<p>
+
+you are ready now go to 
+<code>http://localhost:8977/Hellojava </code> 
+
+if it's work than can go also to Kotlin example
+<code>http://localhost:8977/HelloKotlin </code> 
+
+
+
+</p>
+
+if every thing is Ok now you need  a real life example 
+
+<p><strong>CRUD example</strong></p>
+
+
+create database i use Mysql user your own or even use H2 bout don't forget to add 
+your driver in Gradle file
+
+
+
+<p><strong> Make your database Config correct  at this files</strong></p>
+
+
+<li>/resources/application.properties</li>
+<li>/resources/application.yaml</li>
+<li>/resources/database.properties</li>
+
+
+<p>
+
+also you need to  config same files in project root 'used when i need configuration outside the Jar  '
+</p>
+<li>application.properties</li>
+<li>database.properties</li>
+
+
+
+
+<p> <strong>Code First </strong> </p>
+<p> if need to go and build your database Like old school it's ok go and do it  </p>
+
+<div> <strong> otherwise  under app.models  created file call Admin.java </strong> </div>
+
+
+<code>
+  
+        
+          package app.models;
+          import javax.persistence.Entity;
+        import javax.persistence.Id;
+        import javax.persistence.Table;
+        import java.sql.Timestamp;
+    
+        import io.ebean.Ebean;
+        import io.ebean.Model;
+        import io.ebean.annotation.Index;
+        @Entity
+        @Table(name="admin")
+        public class Admin extends Model {
+        
+        
+            @Id
+            public long userId;
+        
+        
+            @Index(unique=true)
+            public String userName;
+        
+            public String userPassword;
+        
+            public Timestamp dateCreated;
+        
+            public String lastIP;
+        
+            public String token;
+        
+            public Timestamp lastLogin;
+        
+            public String getAPI_token() {
+                return API_token;
+            }
+        
+            public void setAPI_token(String API_token) {
+                this.API_token = API_token;
+            }
+        
+            public String API_token;
+        
+            public String getAPI_Key() {
+                return API_Key;
+            }
+        
+            public void setAPI_Key(String API_Key) {
+                this.API_Key = API_Key;
+            }
+        
+            public String API_Key;
+        
+            public Admin() {
+                super();
+            }
+        
+            public long getUserId() {
+                return userId;
+            }
+        
+            public void setUserId(Long userId) {
+                this.userId = userId;
+            }
+        
+            public String getUserName() {
+                return userName;
+            }
+        
+            public void setUserName(String userName) {
+                this.userName = userName;
+            }
+        
+            public String getUserPassword() {
+                return userPassword;
+            }
+        
+            public void setUserPassword(String userPassword) {
+                this.userPassword = userPassword;
+            }
+        
+            public Timestamp getDateCreated() {
+                return dateCreated;
+            }
+        
+            public void setDateCreated(Timestamp dateCreated) {
+                this.dateCreated = dateCreated;
+            }
+        
+            public String getLastIP() {
+                return lastIP;
+            }
+        
+            public void setLastIP(String lastIP) {
+                this.lastIP = lastIP;
+            }
+        
+            public String getToken() {
+                return token;
+            }
+        
+            public void setToken(String token) {
+                this.token = token;
+            }
+        
+            public Timestamp getLastLogin() {
+                return lastLogin;
+            }
+        
+            public void setLastLogin(Timestamp lastLogin) {
+                this.lastLogin = lastLogin;
+            }
+        
+            public Admin  finder(long id){
+                return Ebean.find(Admin.class , id);
+        
+            }
+        
+        
+        
+
+</code>
+<div><p>  your find this file and it's related files in repo code  </p>
+</div>
+
+
+
+
+<p>First if you know OOP and MVC concepts you are good to go else {read about them first }</p>
+<code>  Hello world ! example  &nbsp;</code>
+<p><strong> email me <a href="mailto:info@sadeem-egypt.com">info@sadeem-egypt.com</a></strong></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
