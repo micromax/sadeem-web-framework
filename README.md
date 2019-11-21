@@ -677,6 +677,7 @@ add more tutorial and library
 </code>
 
 finally feel free to contact me 
+<p><strong>  <a href="https://www.linkedin.com/in/mohamed-alaa-05a54646/">linkedin</a></strong></p>
 <p><strong>  <a href="mailto:m.elqrwash@sadeem-egypt.com">m.elqrwash@sadeem-egypt.com</a></strong></p>
 <p><strong>  <a href="mailto:m.elqrwash@gmail.com">m.elqrwash@gmail.com</a></strong></p>
 <p><strong>  <a href="mailto:info@sadeem-egypt.com">info@sadeem-egypt.com</a></strong></p>
