@@ -352,8 +352,184 @@ also you need to  config same files in project root 'used when i need configurat
 
 </code>
 
+<p> you will find the code in the Repo.. </p>
+
+
+
+<p> <strong>now one More step </strong> we need a finder to search our data 
+  you could use Ebean query 
+  </p>
+
+The code for that will be in "/models.finder"
+
 
 </div>
+<code>
+        
+    
+    package app.models.finder;
+    import app.models.Admin;
+    import io.ebean.Ebean;
+    import io.ebean.Finder;
+    import java.util.List;
+    
+    public class AuthModel extends Finder<Long, Admin>  {
+    
+        private String Username;
+        private String Password;
+        private int isValid;
+    
+    
+    
+    
+    
+        public AuthModel(){
+            super(Admin.class);
+    
+        }
+        public Admin byId(long username)
+        {
+            return  query().where().eq("user_id" , username ).findOne();
+        }
+    
+        public Admin byName(String username)
+        {
+            return  query().where().eq("user_name" , username ).findOne();
+        }
+    
+    
+        public Admin byNameAndPassword(String un , String pw) {
+            return Ebean.getDefaultServer().find(Admin.class).where()
+                    .eq("user_name", un)
+                    .and()
+                    .eq("user_password" , pw)
+                    .findOne();
+        }
+    
+    
+        public Admin byIdAndTookenAndIp(long id , String token , String ip)  {
+            return Ebean.getDefaultServer().find(Admin.class).where()
+                    .eq("user_id", id)
+                    .and()
+                    .eq("token" , token)
+                    .and()
+                    .eq("last_ip" , ip)
+                    .findOne();
+        }
+    
+        public Admin byAPI( String token , String key) {
+            return Ebean.getDefaultServer().find(Admin.class).where()
+                    .eq("api_token", token)
+                    .and()
+                    .eq("api_key" , key)
+                    .findOne();
+        }
+        public List<Admin> GetAll()
+        {
+            return  query().findList();
+        }
+        public int GetAllCount()
+        {
+            return  query().findList().size();
+        }
+    
+    }
+
+
+</code>
+
+
+<p> controller and router : HowTo  </p>
+
+
+create your controller in language you know Kotlin , java , Scala 
+ 
+ 
+    ps : scala controller should be in Scala Folder not in java 
+    kotlin could be in same java class Folder 
+ 
+<code> 
+
+
+
+
+            public class HelloJava extends CG_Controller {
+            
+            
+              public HelloJava(RoutingContext rxtx) {
+                    super(rxtx);
+                }
+            
+                /**
+                 *   index : this default method for every controller
+                 *   Render :  will Print any thing to response
+                 *   simply this will print $String "Hello world ! from java"
+                 *
+                 * @return void
+                 * @throws IOException
+                 */
+                @Override
+                public void index() throws IOException
+                {
+                    super.index();
+                    Render("Hello world ! from java");
+                }
+            
+            }
+
+</code> 
+
+<p>
+ this very basic controller 
+ we have to add it to our router File 
+ like this 
+ 
+ <code> 
+    Hellojava = app.controller.HelloJava
+ </code>
+</p>
+ 
+
+
+
+
+<p> Views : HowTo  </p>
+
+<li> we use Freemarker as template engine    </li>
+view located in /resources/views 
+
+static files served from /resources/webroot
+
+
+called in view like that 
+
+
+<code>
+
+    <link href="/static/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+</code>
+
+
+
+<code>
+
+
+
+
+ we scaffolding view's part in 
+ 
+ 0 - /views/
+    1  - /views/layout/
+    2 - /views/partia/
+ 
+</code>
+
+go to view and discover it and read Freemarker documentation for Var , Lists , Array , Loop 
+it's literally will take no time to master it    
+
+
+
+
 
 <p><strong> email me <a href="mailto:info@sadeem-egypt.com">info@sadeem-egypt.com</a></strong></p>
 <p>&nbsp;</p>
